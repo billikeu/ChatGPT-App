@@ -1,5 +1,6 @@
-# ChatGPT-App
+# billikeu/ChatGPT-App
 
+Only 5.1MB, [ChatGPT-App](https://github.com/billikeu/ChatGPT-App) is a desktop chatbot application. Support multiple chat engines including `ChatGPT`, `New Bing`,`Bard`, `yiyang`, etc.
 
 ## Support Platform
 
