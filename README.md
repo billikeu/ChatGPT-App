@@ -37,6 +37,12 @@ Now, return to use
 
 To build a redistributable, production mode package, use `wails build`.
 
+## Plan
+
+- [x] ChatGPT
+- [ ] New Bing
+- [ ] Bard
+- [ ] YiYan
 
 ## References
 
