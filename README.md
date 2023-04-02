@@ -1,6 +1,6 @@
 # billikeu/ChatGPT-App
 
-Only 5.1MB, [ChatGPT-App](https://github.com/billikeu/ChatGPT-App) is a desktop chatbot application. Support multiple chat engines including `ChatGPT`, `New Bing`,`Bard`, `yiyang`, etc.
+Only 5.1MB, [ChatGPT-App](https://github.com/billikeu/ChatGPT-App) is a desktop chatbot application. Support multiple chat engines including `ChatGPT`, `New Bing`,`Bard`, `yiyan`, etc.
 
 ## Support Platform
 
@@ -18,7 +18,7 @@ Only 5.1MB, [ChatGPT-App](https://github.com/billikeu/ChatGPT-App) is a desktop 
 
 how to use it
 
-Click this [Release]() to download, of course you can also compile it yourself
+Click this [Release](https://github.com/billikeu/ChatGPT-App/releases) to download, of course you can also compile it yourself
 
 1. first, click setting
 
