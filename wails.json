@@ -1,0 +1,13 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "ChatGPT-App",
+  "outputfilename": "ChatGPT-App",
+  "frontend:install": "pnpm bootstrap",
+  "frontend:build": "npm run build",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "author": {
+    "name": "billikeu",
+    "email": "billikeu@gmail.com"
+  }
+}
