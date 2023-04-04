@@ -27,7 +27,7 @@ const accountType = computed({
 const engineOptions: { label: string; key: AccountType; value: AccountType; disabled: boolean }[] = [
   { label: 'ChatGPT', key: 'ChatGPT', value: 'ChatGPT', disabled: false },
   { label: 'ChatGPTUnofficial', key: 'ChatGPTUnofficial', value: 'ChatGPTUnofficial', disabled: true },
-  { label: 'NewBingUnofficial', key: 'NewBingUnofficial', value: 'NewBingUnofficial', disabled: true },
+  { label: 'NewBingUnofficial', key: 'NewBingUnofficial', value: 'NewBingUnofficial', disabled: false },
 ]
 
 function updateAccountInfo(options: Partial<AccountInfo>) {

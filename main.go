@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"embed"
+	"log"
 
 	"github.com/billikeu/ChatGPT-App/backend"
 
@@ -16,6 +17,7 @@ var assets embed.FS
 
 func main() {
 	// Create an instance of the app structure
+	log.SetFlags(log.LstdFlags | log.Lshortfile)
 	app := NewApp()
 	server := backend.NewServer("", "")
 

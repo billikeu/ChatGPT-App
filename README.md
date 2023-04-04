@@ -2,6 +2,14 @@
 
 Only 5.1MB, [ChatGPT-App](https://github.com/billikeu/ChatGPT-App) is a desktop chatbot application. Support multiple chat engines including `ChatGPT`, `New Bing`,`Bard`, `yiyan`, etc.
 
+## Plan
+
+- [x] ChatGPT
+- [ ] ChatGPT Unofficial
+- [x] Bing Unofficial
+- [ ] Bard
+- [ ] YiYan
+
 ## Support Platform
 
 - [x] Windows
@@ -36,13 +44,6 @@ Now, return to use
 ## Building
 
 To build a redistributable, production mode package, use `wails build`.
-
-## Plan
-
-- [x] ChatGPT
-- [ ] New Bing
-- [ ] Bard
-- [ ] YiYan
 
 ## References
 

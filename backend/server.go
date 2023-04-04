@@ -3,13 +3,14 @@ package backend
 import (
 	"context"
 	"io/ioutil"
-	"log"
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/billikeu/ChatGPT-App/backend/middlewares"
 
 	"github.com/billikeu/Go-ChatBot/bot"
+	bingunofficial "github.com/billikeu/Go-ChatBot/bot/bingUnofficial"
 	"github.com/billikeu/Go-ChatBot/bot/params"
 	"github.com/gin-gonic/gin"
 	uuid "github.com/satori/go.uuid"
@@ -17,11 +18,9 @@ import (
 )
 
 type Server struct {
-	ctx       context.Context
-	bot       *bot.Bot
-	proxy     string
-	chatGPTSK string
-	setting   gjson.Result
+	ctx     context.Context
+	bot     *bot.Bot
+	setting *Setting
 }
 
 func NewServer(sk, proxy string) *Server {
@@ -31,14 +30,19 @@ func NewServer(sk, proxy string) *Server {
 			ChatGPT: bot.ChatGPTConf{
 				SecretKey: sk, // your secret key
 			},
+			BingUnofficialConfig: &bingunofficial.BingConfig{
+				Cookies: []map[string]interface{}{map[string]interface{}{
+					"name":  "demo",
+					"value": "demo",
+				}},
+			},
 		}),
 	}
 	return s
 }
 
 func (s *Server) SetSetting(jsonStr string) {
-	log.Println(jsonStr)
-	s.setting = gjson.Parse(jsonStr)
+	s.setting = NewSetting(jsonStr)
 }
 
 func (s *Server) Init(ctx context.Context) {
@@ -86,20 +90,25 @@ func (s *Server) chatProcess(c *gin.Context) {
 	}
 	// log.Println(j)
 	var chunkIndex int
+	var text string
 	err = s.bot.Ask(context.Background(), &params.AskParams{
-		Proxy:             s.setting.Get("accountInfo.proxy").String(),
-		SecretKey:         s.setting.Get("accountInfo.openaiApiKey").String(),
+		Proxy:             s.setting.Proxy(),
+		SecretKey:         s.setting.ChatSk(),
 		RefreshProxy:      true,
 		RefreshSecretKey:  true,
 		ConversationId:    conversationId,
 		Prompt:            prompt,
-		BotType:           params.BotTypeChatGPT,
+		ChatEngine:        s.setting.Engine(), // params.ChatGPT
 		SystemRoleMessage: j.Get("options.systemMessage").String(),
 		Callback: func(_params *params.CallParams, err error) {
 			if err != nil {
 				return
 			}
-			chunkIndex = _params.ChunkIndex
+			chunkIndex += 1
+			if _params.Chunk == "" {
+				_params.Chunk = strings.TrimPrefix(_params.Text, text)
+			}
+			text = _params.Text
 			m := ChatMessage{
 				Role:            "assistant",
 				ID:              _params.MsgId,
@@ -110,7 +119,7 @@ func (s *Server) chatProcess(c *gin.Context) {
 					ID:      _params.MsgId,
 					Object:  "chat.completion.chunk",
 					Created: time.Now().Unix(),
-					Model:   params.BotTypeChatGPT,
+					Model:   params.ChatGPT,
 					Choices: []ChoiceInfo{
 						{
 							Delta: DeltaInfo{
@@ -123,7 +132,7 @@ func (s *Server) chatProcess(c *gin.Context) {
 				},
 			}
 			msg := m.String()
-			if _params.ChunkIndex > 1 {
+			if chunkIndex > 1 {
 				msg = "\n" + msg
 			}
 			c.Writer.Write([]byte(msg))
