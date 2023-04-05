@@ -1,0 +1,23 @@
+name: Wails build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        build: [
+          {name: ChatGPT-App, platform: linux/amd64, os: ubuntu-latest},
+          {name: ChatGPT-App, platform: windows/amd64, os: windows-latest},
+          {name: ChatGPT-App, platform: darwin/universal, os: macos-latest}
+        ]
+    runs-on: ${{ matrix.build.os }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - uses: billikeu/wails-build-action
+        with:
+          build-name: ${{ matrix.build.name }}
+          build-platform: ${{ matrix.build.platform }}
