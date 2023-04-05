@@ -1,6 +1,12 @@
-name: Wails build
+name: Build Released
 
-on: [push, pull_request]
+on:
+  release:
+    types: [released]
+    paths-ignore:
+      - '**.md'
+      - build.sh
+      - LICENSE
 
 jobs:
   build:
