@@ -1,12 +1,11 @@
 name: Build Released
 
 on:
-  release:
-    types: [released]
-    paths-ignore:
-      - '**.md'
-      - build.sh
-      - LICENSE
+  push:
+    branches:
+      - master
+    tags:
+      - 'v*'
 
 jobs:
   build:
