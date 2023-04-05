@@ -9,7 +9,7 @@ jobs:
       matrix:
         build: [
           {name: ChatGPT-App, platform: linux/amd64, os: ubuntu-latest},
-          {name: ChatGPT-App, platform: windows/amd64, os: windows-latest},
+          {name: ChatGPT-App.exe, platform: windows/amd64, os: windows-latest},
           {name: ChatGPT-App, platform: darwin/universal, os: macos-latest}
         ]
     runs-on: ${{ matrix.build.os }}
