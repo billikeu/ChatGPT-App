@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import { computed, ref, watch } from 'vue'
 import { NButton, NInput, NSelect, useMessage } from 'naive-ui'
-import { SetSetting } from '../../../../wailsjs/go/backend/Server'
+import { SetAccountState } from '../../../../wailsjs/go/backend/Server'
+import { backend } from '../../../../wailsjs/go/models'
 import { useAccountStore } from '@/store'
 import type { AccountInfo, AccountType } from '@/store/modules/account/helper'
 import { t } from '@/locales'
@@ -37,8 +38,18 @@ function updateAccountInfo(options: Partial<AccountInfo>) {
 
 watch(accountInfo, (newValue, oldValue) => {
   if (newValue !== oldValue) {
-    SetSetting(JSON.stringify(accountStore)).then(() => {
-      // console.log('watch', newValue)
+    const accs = new backend.AccountState({
+      account_info: new backend.AccountInfo({
+        chat_engine: accountStore.accountInfo.currentType,
+        openai_api_key: accountStore.accountInfo.openaiApiKey,
+        base_url: accountStore.accountInfo.baseURL,
+        openai_access_token: accountStore.accountInfo.openaiAccessToken,
+        newbing_cookies: accountStore.accountInfo.newbingCookies,
+        proxy: accountStore.accountInfo.proxy,
+      }),
+    })
+    SetAccountState(accs).then(() => {
+      console.log('watch accountStore: ', accountStore)
     })
   }
 })

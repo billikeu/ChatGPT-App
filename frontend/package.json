@@ -1,8 +1,8 @@
 {
   "name": "chatgpt-web",
-  "version": "v1.0.0",
+  "version": "v1.1.1",
   "private": false,
-  "description": "ChatGPT Web",
+  "description": "ChatGPT-App UI",
   "author": "billikeu <billikeu@gmail.com>",
   "keywords": [
     "ChatGPT-App",

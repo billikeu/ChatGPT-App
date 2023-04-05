@@ -3,7 +3,7 @@ module github.com/billikeu/ChatGPT-App
 go 1.19
 
 require (
-	github.com/billikeu/Go-ChatBot v0.0.0-20230404170606-90cb2f1d714c
+	github.com/billikeu/Go-ChatBot v0.0.0-20230405073929-966401ab18ae
 	github.com/gin-gonic/gin v1.9.0
 	github.com/sashabaranov/go-openai v1.6.1
 	github.com/satori/go.uuid v1.2.0

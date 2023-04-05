@@ -20,6 +20,7 @@ func main() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 	app := NewApp()
 	server := backend.NewServer("", "")
+	server.Init(context.Background())
 
 	// Create application with options
 	err := wails.Run(&options.App{
@@ -33,11 +34,11 @@ func main() {
 		BackgroundColour: &options.RGBA{R: 27, G: 38, B: 54, A: 1},
 		OnStartup: func(ctx context.Context) {
 			app.startup(ctx)
-			server.Init(ctx)
 		},
 		Bind: []interface{}{
 			app,
 			server,
+			&backend.AccountState{},
 		},
 	})
 

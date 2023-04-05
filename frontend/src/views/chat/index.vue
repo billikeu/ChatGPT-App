@@ -5,7 +5,8 @@ import { useRoute } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { NAutoComplete, NButton, NInput, useDialog, useMessage } from 'naive-ui'
 import html2canvas from 'html2canvas'
-import { SetSetting } from '../../../wailsjs/go/backend/Server'
+import { SetAccountState } from '../../../wailsjs/go/backend/Server'
+import { backend } from '../../../wailsjs/go/models'
 import { Message } from './components'
 import { useScroll } from './hooks/useScroll'
 import { useChat } from './hooks/useChat'
@@ -463,7 +464,17 @@ onMounted(() => {
   scrollToBottom()
   if (inputRef.value && !isMobile.value)
     inputRef.value?.focus()
-  SetSetting(JSON.stringify(accountStore)).then(() => {
+  const accs = new backend.AccountState({
+    account_info: new backend.AccountInfo({
+      chat_engine: accountStore.accountInfo.currentType,
+      openai_api_key: accountStore.accountInfo.openaiApiKey,
+      base_url: accountStore.accountInfo.baseURL,
+      openai_access_token: accountStore.accountInfo.openaiAccessToken,
+      newbing_cookies: accountStore.accountInfo.newbingCookies,
+      proxy: accountStore.accountInfo.proxy,
+    }),
+  })
+  SetAccountState(accs).then(() => {
     console.log('accountStore: ', accountStore)
   })
 })
