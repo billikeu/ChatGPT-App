@@ -6,8 +6,8 @@ export function Init(arg1) {
   return window['go']['backend']['Server']['Init'](arg1);
 }
 
-export function SetSetting(arg1) {
-  return window['go']['backend']['Server']['SetSetting'](arg1);
+export function SetAccountState(arg1) {
+  return window['go']['backend']['Server']['SetAccountState'](arg1);
 }
 
 export function Start() {

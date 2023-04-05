@@ -25,6 +25,7 @@ type Server struct {
 
 func NewServer(sk, proxy string) *Server {
 	s := &Server{
+		setting: NewSetting(""),
 		bot: bot.NewBot(&bot.Config{
 			Proxy: proxy, // socks5://10.0.0.13:3126 , http://10.0.0.13:3127
 			ChatGPT: bot.ChatGPTConf{
@@ -41,8 +42,8 @@ func NewServer(sk, proxy string) *Server {
 	return s
 }
 
-func (s *Server) SetSetting(jsonStr string) {
-	s.setting = NewSetting(jsonStr)
+func (s *Server) SetAccountState(accountState AccountState) {
+	s.setting.accountState = &accountState
 }
 
 func (s *Server) Init(ctx context.Context) {
@@ -102,6 +103,9 @@ func (s *Server) chatProcess(c *gin.Context) {
 		SystemRoleMessage: j.Get("options.systemMessage").String(),
 		Callback: func(_params *params.CallParams, err error) {
 			if err != nil {
+				return
+			}
+			if _params.Chunk == "" && _params.Text == "" {
 				return
 			}
 			chunkIndex += 1
