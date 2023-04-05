@@ -3,7 +3,7 @@ module github.com/billikeu/ChatGPT-App
 go 1.19
 
 require (
-	github.com/billikeu/Go-ChatBot v0.0.0-20230405073929-966401ab18ae
+	github.com/billikeu/Go-ChatBot v1.0.0
 	github.com/gin-gonic/gin v1.9.0
 	github.com/sashabaranov/go-openai v1.6.1
 	github.com/satori/go.uuid v1.2.0
@@ -13,7 +13,7 @@ require (
 
 require (
 	github.com/bep/debounce v1.2.1 // indirect
-	github.com/billikeu/Go-EdgeGPT v0.0.0-20230403150249-7c4b7ae91320 // indirect
+	github.com/billikeu/Go-EdgeGPT v0.0.0-20230405124922-d6b0505dd3e5 // indirect
 	github.com/bytedance/sonic v1.8.0 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
