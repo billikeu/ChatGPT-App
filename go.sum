@@ -1,11 +1,7 @@
 github.com/bep/debounce v1.2.1 h1:v67fRdBA9UQu2NhLFXrSg0Brw7CexQekrBwDMM8bzeY=
 github.com/bep/debounce v1.2.1/go.mod h1:H8yggRPQKLUhUoqrJC1bO2xNya7vanpDl7xR3ISbCJ0=
-github.com/billikeu/Go-ChatBot v0.0.0-20230405073929-966401ab18ae h1:eUonVidscZ55aZ4Y4N9XAouIYCCnzj4nhCG1WR7BWow=
-github.com/billikeu/Go-ChatBot v0.0.0-20230405073929-966401ab18ae/go.mod h1:dQ9yjcCycIbYODduzYFFhFE2pSj9XQUkoyPA/rjNOa4=
 github.com/billikeu/Go-ChatBot v1.0.0 h1:oh4TMnfBQ5yzpO3+0F7aQ+zJyhu9YZFCGr4PjvdsLaI=
 github.com/billikeu/Go-ChatBot v1.0.0/go.mod h1:rCsAAerd8K/KBbeY+/n+YU3Q4sa8OsOp1QnIVVfzn9c=
-github.com/billikeu/Go-EdgeGPT v0.0.0-20230403150249-7c4b7ae91320 h1:ScTNBngJYi+FUJTBCdOPCQZFvqj65bYNDmkyb+MNGms=
-github.com/billikeu/Go-EdgeGPT v0.0.0-20230403150249-7c4b7ae91320/go.mod h1:nvvtvWW7+j6UeEDyIet3W/5Rx7Oez2LI8qL7iXV+HLc=
 github.com/billikeu/Go-EdgeGPT v0.0.0-20230405124922-d6b0505dd3e5 h1:byEVQlRcF0lo0TFlqHPDlW1t87Cqll4m/GXC7uDMeO4=
 github.com/billikeu/Go-EdgeGPT v0.0.0-20230405124922-d6b0505dd3e5/go.mod h1:nvvtvWW7+j6UeEDyIet3W/5Rx7Oez2LI8qL7iXV+HLc=
 github.com/bytedance/sonic v1.5.0/go.mod h1:ED5hyg4y6t3/9Ku1R6dU/4KyJ48DZ4jPhfY1O2AihPM=
