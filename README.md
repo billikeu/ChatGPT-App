@@ -7,7 +7,7 @@ Click to open and use, no compilation, no deployment, no installation required.
 ## Plan
 
 - [x] ChatGPT
-- [ ] ChatGPT Unofficial
+- [x] ChatGPT Unofficial
 - [x] Bing Unofficial
 - [ ] Bard
 - [ ] YiYan
