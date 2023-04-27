@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/billikeu/Go-ChatBot v1.0.0
 	github.com/billikeu/Go-EdgeGPT v0.0.0-20230405124922-d6b0505dd3e5
-	github.com/billikeu/go-chatgpt v1.1.1
+	github.com/billikeu/go-chatgpt v1.1.2
 	github.com/gin-gonic/gin v1.9.0
 	github.com/satori/go.uuid v1.2.0
 	github.com/tidwall/gjson v1.14.4
@@ -15,8 +15,8 @@ require (
 require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
 	github.com/bep/debounce v1.2.1 // indirect
-	github.com/bogdanfinn/fhttp v0.5.20 // indirect
-	github.com/bogdanfinn/tls-client v1.3.9 // indirect
+	github.com/bogdanfinn/fhttp v0.5.21 // indirect
+	github.com/bogdanfinn/tls-client v1.3.10 // indirect
 	github.com/bogdanfinn/utls v1.5.16 // indirect
 	github.com/bytedance/sonic v1.8.0 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
@@ -47,7 +47,7 @@ require (
 	github.com/pkg/browser v0.0.0-20210706143420-7d21f8c997e2 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/samber/lo v1.27.1 // indirect
-	github.com/sashabaranov/go-openai v1.8.0 // indirect
+	github.com/sashabaranov/go-openai v1.9.0 // indirect
 	github.com/tam7t/hpkp v0.0.0-20160821193359-2b70b4024ed5 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.1 // indirect
