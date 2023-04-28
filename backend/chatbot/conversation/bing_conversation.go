@@ -54,7 +54,7 @@ func (s *BingConversation) GetMessage() interface{} {
 			ParentId:     s.ParentId,
 			Prompt:       s.Prompt,
 			Proxy:        s.Proxy,
-			Timeout:      60,
+			Timeout:      120,
 		},
 		ModelName: "text-davinci-002-render-sha",
 		StrCookie: s.StrCookie,

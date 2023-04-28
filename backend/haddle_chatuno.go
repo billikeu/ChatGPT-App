@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/billikeu/ChatGPT-App/backend/chatbot/conversation"
+	"github.com/billikeu/ChatGPT-App/backend/chatbot/engine"
 	"github.com/billikeu/ChatGPT-App/backend/chatbot/strategy"
-	"github.com/billikeu/Go-ChatBot/bot/params"
 	"github.com/gin-gonic/gin"
 	"github.com/tidwall/gjson"
 )
@@ -99,7 +99,7 @@ func (s *Server) chatProcessChatGPTUno(c *gin.Context) {
 				ID:      data.Message.ID,
 				Object:  "chat.completion.chunk",
 				Created: time.Now().Unix(),
-				Model:   params.ChatGPT,
+				Model:   engine.EngineNameChatGPTUno,
 				Choices: []ChoiceInfo{
 					{
 						Delta: DeltaInfo{
