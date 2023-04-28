@@ -46,7 +46,7 @@ func (s *ChatConversation) GetMessage() interface{} {
 			ParentId:     s.ParentId,
 			Prompt:       s.Prompt,
 			Proxy:        s.Proxy,
-			Timeout:      60,
+			Timeout:      120,
 		},
 		SecretKey: s.SecretKey,
 	}

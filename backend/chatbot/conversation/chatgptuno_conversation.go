@@ -43,7 +43,7 @@ func (s *ChatGPTUnoConversation) GetMessage() interface{} {
 			ParentId:     s.ParentId,
 			Prompt:       s.Prompt,
 			Proxy:        "",
-			Timeout:      60,
+			Timeout:      120,
 		},
 		ModelName:   "text-davinci-002-render-sha",
 		AccessToken: s.AccessToken,
